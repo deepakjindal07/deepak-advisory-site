@@ -1,14 +1,308 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Learning Philosophy – Deepak Market Education & Research</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investment Philosophy - Deepak Investment Advisory</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+
+    .intro-section {
+      background: white;
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 3rem;
+    }
+
+    .intro-section p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    .intro-section strong {
+      color: #1e3a5f;
+    }
+
+    .principles-section {
+      background: white;
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 3rem;
+    }
+
+    .principles-section h3 {
+      color: #1e3a5f;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid #2c5282;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .principle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .principle-card {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      padding: 2rem;
+      border-radius: 10px;
+      border-left: 4px solid #2c5282;
+      transition: all 0.3s ease;
+    }
+
+    .principle-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      border-left-width: 6px;
+    }
+
+    .principle-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .principle-card h4 {
+      color: #1e3a5f;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .principle-card p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .quotes-section {
+      background: #1e3a5f;
+      color: white;
+      padding: 3rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
+
+    .quotes-section h3 {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .quote-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .quote-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      border-left: 4px solid #ffd700;
+      transition: all 0.3s ease;
+    }
+
+    .quote-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateX(5px);
+    }
+
+    .quote-text {
+      font-size: 1.3rem;
+      font-style: italic;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .quote-author {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ffd700;
+      text-align: right;
+    }
+
+    .quote-explanation {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.7;
+    }
+
+    .impact-section {
+      background: white;
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 3rem;
+    }
+
+    .impact-section h3 {
+      color: #1e3a5f;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid #2c5282;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .impact-card {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .impact-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .impact-card h4 {
+      color: #1e3a5f;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .impact-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .comparison-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      padding: 3rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
+
+    .comparison-section h3 {
+      color: #1e3a5f;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .comparison-table {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .comparison-row:last-child {
+      border-bottom: none;
+    }
+
+    .comparison-header {
+      background: #2c5282;
+      color: white;
+      font-weight: 600;
+      padding: 1.5rem;
+    }
+
+    .comparison-cell {
+      padding: 1.5rem;
+    }
+
+    .we-avoid {
+      background: #fff5f5;
+      color: #991b1b;
+    }
+
+    .we-focus {
+      background: #f0fdf4;
+      color: #166534;
+    }
+
+    .closing-section {
+      background: white;
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .closing-section h3 {
+      color: #1e3a5f;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .closing-section p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+
+    .final-quote {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #2c5282;
+      margin: 2rem 0;
+      padding: 2rem;
+      background: #f8f9fa;
+      border-radius: 10px;
+      border-left: 4px solid #2c5282;
+    }
+
+    @media (max-width: 768px) {
+      .principle-grid,
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-row {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-text {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1 style="text-align:center; margin:0;">Deepak Market Education & Research</h1>
+  <div class="header-top">
+    <h1>Deepak Investment Advisory</h1>
+    <p>Research-Driven Investment Solutions for Long-Term Wealth Creation</p>
+  </div>
   <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
@@ -16,26 +310,330 @@
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="payment.html">Payment</a>
-    <a href="disclaimer.html">Disclaimer</a>
   </nav>
 </header>
 
-<div class="container">
-  <div class="section">
-    <h2>Learning Philosophy</h2>
+<div class="premium-hero">
+  <h2>Our Investment Philosophy</h2>
+  <p>Built on timeless principles, proven strategies, and the wisdom of legendary investors</p>
+</div>
 
-    <ul>
-      <li>Understanding how quality businesses build value over time.</li>
-      <li>Analyzing fundamental concepts like cash flow, capital allocation, and growth potential.</li>
-      <li>Studying historical cycles and decision-making frameworks used by legendary investors.</li>
-      <li>Encouraging independent thinking and self-driven learning in investing.</li>
-    </ul>
+<div class="container">
+  
+  <!-- Introduction -->
+  <div class="intro-section">
+    <p>
+      Our investment philosophy is deeply rooted in <strong>value investing</strong>, long-term thinking, 
+      and the fundamental belief that exceptional businesses, acquired at reasonable valuations, generate 
+      wealth through the powerful force of compounding. We firmly believe that markets reward patience, 
+      discipline, and analytical clarity far more than speculation or market timing.
+    </p>
+
+    <p>
+      Over the years, we have studied and internalized the wisdom of legendary investors—<strong>Warren Buffett, 
+      Charlie Munger, Peter Lynch, Benjamin Graham, Philip Fisher, and Mohnish Pabrai</strong>—adapting their 
+      timeless insights to the dynamic landscape of Indian equity markets. These principles have not only 
+      guided our research methodology but have fundamentally shaped how we analyze businesses and construct 
+      investment frameworks.
+    </p>
+
+    <p>
+      Our approach rejects the noise of daily market movements and short-term speculation. Instead, we focus 
+      on understanding business fundamentals, competitive advantages, management quality, and long-term value 
+      creation. This philosophy has consistently helped us identify companies that deliver sustainable growth 
+      and meaningful returns over extended periods.
+    </p>
   </div>
+
+  <!-- Core Principles -->
+  <div class="principles-section">
+    <h3>Core Investment Principles</h3>
+    
+    <div class="principle-grid">
+      
+      <div class="principle-card">
+        <span class="principle-icon">🏰</span>
+        <h4>Economic Moats & Competitive Advantages</h4>
+        <p>
+          We seek businesses with durable competitive moats—strong brands, network effects, cost advantages, 
+          or regulatory barriers that protect them from competition and enable sustained profitability over decades.
+        </p>
+      </div>
+
+      <div class="principle-card">
+        <span class="principle-icon">📊</span>
+        <h4>Fundamental Analysis First</h4>
+        <p>
+          Deep analysis of cash flow generation, return on capital employed, margin stability, balance sheet 
+          strength, and long-term demand trends forms the foundation of our research process.
+        </p>
+      </div>
+
+      <div class="principle-card">
+        <span class="principle-icon">👔</span>
+        <h4>Management Quality & Capital Allocation</h4>
+        <p>
+          Exceptional CEOs are exceptional capital allocators. We study how management deploys profits—through 
+          reinvestment, acquisitions, dividends, or buybacks—as this determines long-term shareholder value.
+        </p>
+      </div>
+
+      <div class="principle-card">
+        <span class="principle-icon">📈</span>
+        <h4>Margin of Safety</h4>
+        <p>
+          Following Benjamin Graham's principle, we always seek a significant gap between price and intrinsic 
+          value, providing protection against errors in judgment and unforeseen market volatility.
+        </p>
+      </div>
+
+      <div class="principle-card">
+        <span class="principle-icon">🔄</span>
+        <h4>Understanding Market Cycles</h4>
+        <p>
+          Market history doesn't repeat exactly, but it rhymes. Understanding economic and business cycles 
+          helps us maintain discipline during euphoria and courage during panic.
+        </p>
+      </div>
+
+      <div class="principle-card">
+        <span class="principle-icon">🧠</span>
+        <h4>Independent Thinking</h4>
+        <p>
+          We think from first principles rather than following market sentiment or media narratives. True 
+          value emerges from contrarian analysis backed by thorough research.
+        </p>
+      </div>
+
+      <div class="principle-card">
+        <span class="principle-icon">⏳</span>
+        <h4>Time as the Ultimate Advantage</h4>
+        <p>
+          We believe in giving quality businesses time to compound. The real wealth is created not through 
+          trading but through patient ownership of outstanding companies.
+        </p>
+      </div>
+
+      <div class="principle-card">
+        <span class="principle-icon">🎯</span>
+        <h4>Concentrated Conviction</h4>
+        <p>
+          Rather than over-diversifying, we believe in owning fewer, high-quality businesses that we understand 
+          deeply—putting meaningful capital behind our best ideas.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Wisdom from Masters -->
+  <div class="quotes-section">
+    <h3>Wisdom From Investment Legends</h3>
+    
+    <div class="quote-container">
+      
+      <div class="quote-card">
+        <div class="quote-text">
+          "Price is what you pay. Value is what you get."
+        </div>
+        <div class="quote-author">— Warren Buffett</div>
+        <div class="quote-explanation">
+          This fundamental distinction between price and value has shaped our entire valuation approach. 
+          We focus not on short-term price movements, but on the underlying intrinsic worth of a business. 
+          Markets can misprice securities in the short run, but eventually, value and price converge. Our 
+          job is to identify this gap and wait patiently for the market to recognize true value.
+        </div>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-text">
+          "Know what you own, and know why you own it."
+        </div>
+        <div class="quote-author">— Peter Lynch</div>
+        <div class="quote-explanation">
+          Peter Lynch's wisdom taught us that successful investing requires clarity and conviction. If we 
+          cannot explain a business model in simple terms or articulate why we own a stock, we avoid it. 
+          This principle keeps us focused on businesses we truly understand rather than chasing complex 
+          opportunities or following the crowd.
+        </div>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-text">
+          "The big money is not in the buying or the selling, but in the waiting."
+        </div>
+        <div class="quote-author">— Charlie Munger</div>
+        <div class="quote-explanation">
+          This reinforces the critical importance of patience and the compounding effect that only long-term 
+          investing unlocks. The greatest returns come from holding exceptional businesses through market 
+          cycles, allowing time and compound growth to work their magic. Trading frequently disrupts this 
+          powerful process.
+        </div>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-text">
+          "In the short run, the market is a voting machine. In the long run, it's a weighing machine."
+        </div>
+        <div class="quote-author">— Benjamin Graham</div>
+        <div class="quote-explanation">
+          Graham's insight reminds us that short-term prices reflect sentiment and emotion, while long-term 
+          prices reflect fundamental business performance. This distinction allows us to remain calm during 
+          market volatility and focus on what truly matters—the underlying business quality and earnings power.
+        </div>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-text">
+          "The stock market is designed to transfer money from the Active to the Patient."
+        </div>
+        <div class="quote-author">— Warren Buffett</div>
+        <div class="quote-explanation">
+          This powerful observation validates our long-term approach. Frequent trading, market timing, and 
+          chasing momentum typically destroy value through transaction costs, taxes, and poor timing. Patient, 
+          buy-and-hold investing in quality businesses has consistently outperformed active trading strategies.
+        </div>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-text">
+          "Heads I win, Tails I don't lose much."
+        </div>
+        <div class="quote-author">— Mohnish Pabrai</div>
+        <div class="quote-explanation">
+          Pabrai's framework for asymmetric risk-reward is central to our investment selection. We seek 
+          opportunities where the potential upside significantly exceeds the downside risk. Combined with 
+          margin of safety, this approach protects capital while positioning for substantial gains.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- What We Avoid vs Focus -->
+  <div class="comparison-section">
+    <h3>Our Investment Framework: What We Avoid vs. What We Focus On</h3>
+    
+    <div class="comparison-table">
+      <div class="comparison-row">
+        <div class="comparison-header we-avoid">❌ We Avoid</div>
+        <div class="comparison-header we-focus">✅ We Focus On</div>
+      </div>
+      
+      <div class="comparison-row">
+        <div class="comparison-cell we-avoid">Short-term trading and speculation</div>
+        <div class="comparison-cell we-focus">Long-term business ownership</div>
+      </div>
+      
+      <div class="comparison-row">
+        <div class="comparison-cell we-avoid">Hype-driven sectors and momentum plays</div>
+        <div class="comparison-cell we-focus">Fundamental quality and proven models</div>
+      </div>
+      
+      <div class="comparison-row">
+        <div class="comparison-cell we-avoid">Heavily leveraged balance sheets</div>
+        <div class="comparison-cell we-focus">Strong, clean balance sheets</div>
+      </div>
+      
+      <div class="comparison-row">
+        <div class="comparison-cell we-avoid">Complex, hard-to-understand businesses</div>
+        <div class="comparison-cell we-focus">Simple, predictable business models</div>
+      </div>
+      
+      <div class="comparison-row">
+        <div class="comparison-cell we-avoid">Management with poor track records</div>
+        <div class="comparison-cell we-focus">Proven, shareholder-friendly management</div>
+      </div>
+      
+      <div class="comparison-row">
+        <div class="comparison-cell we-avoid">Overvalued, expensive stocks</div>
+        <div class="comparison-cell we-focus">Reasonable valuations with margin of safety</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Impact of This Philosophy -->
+  <div class="impact-section">
+    <h3>How This Philosophy Has Shaped Our Success</h3>
+    
+    <div class="impact-grid">
+      
+      <div class="impact-card">
+        <div class="impact-icon">🛡️</div>
+        <h4>Emotional Discipline</h4>
+        <p>Staying calm and rational during market corrections, avoiding panic selling when others are fearful</p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-icon">🎯</div>
+        <h4>Focused Portfolio</h4>
+        <p>Concentrated holdings in high-conviction ideas rather than over-diversification that dilutes returns</p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-icon">📚</div>
+        <h4>Continuous Learning</h4>
+        <p>Constant improvement through studying businesses, reading annual reports, and learning from mistakes</p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-icon">💎</div>
+        <h4>Quality Selection</h4>
+        <p>Identifying businesses with sustainable competitive advantages and long runway for growth</p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-icon">⏰</div>
+        <h4>Patient Capital</h4>
+        <p>Holding quality businesses for years, allowing compound growth to create substantial wealth</p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-icon">🧭</div>
+        <h4>Clear Framework</h4>
+        <p>A systematic, repeatable process for analyzing opportunities and making investment decisions</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Closing Section -->
+  <div class="closing-section">
+    <h3>Our Commitment to You</h3>
+    
+    <p>
+      Our goal is to help you internalize these timeless investment principles so you can avoid common 
+      mistakes, gain clarity in your decision-making, and build genuine confidence in your investment journey. 
+      We believe that education and understanding are the foundations of successful long-term investing.
+    </p>
+
+    <p>
+      We don't believe in shortcuts, hot tips, or market predictions—only in rigorous research, patient 
+      execution, and intelligent capital allocation. Great wealth is built slowly, methodically, and with 
+      unwavering discipline. It's not exciting or glamorous, but it works consistently over time.
+    </p>
+
+    <div class="final-quote">
+      "Someone's sitting in the shade today because someone planted a tree a long time ago."
+      <br><strong>— Warren Buffett</strong>
+    </div>
+
+    <p style="font-size: 1.15rem; font-weight: 500; color: #1e3a5f;">
+      Let us help you plant those trees today. The best time to start was yesterday. The second best time is now.
+    </p>
+  </div>
+
 </div>
 
 <footer>
-  © 2025 Deepak Market Education & Research. All rights reserved.
+  <p><strong>Deepak Investment Advisory</strong></p>
+  <p>© 2025 All rights reserved.</p>
+  <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">
+    Disclaimer: Investments in securities market are subject to market risks. Read all related documents carefully before investing.
+  </p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>

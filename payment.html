@@ -1,14 +1,358 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Payment – Deepak Market Education & Research</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscription Plans - Deepak Investment Advisory</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+
+    .disclaimer-banner {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      color: #856404;
+    }
+
+    .disclaimer-banner strong {
+      color: #664d03;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2.5rem 0;
+    }
+
+    .plan-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      border: 2px solid transparent;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+      border-color: #2c5282;
+    }
+
+    .plan-card.featured {
+      border: 2px solid #2c5282;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: #2c5282;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .plan-card h3 {
+      margin: 0 0 1rem 0;
+      color: #1e3a5f;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .plan-price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c5282;
+      margin-bottom: 0.5rem;
+    }
+
+    .plan-price span {
+      font-size: 1rem;
+      color: #666;
+      font-weight: 400;
+    }
+
+    .plan-description {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .plan-list {
+      margin: 1.5rem 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .plan-list li {
+      padding: 0.7rem 0;
+      color: #555;
+      position: relative;
+      padding-left: 2rem;
+      line-height: 1.6;
+    }
+
+    .plan-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #2c5282;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .best-for {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      border-left: 3px solid #2c5282;
+    }
+
+    .best-for strong {
+      color: #1e3a5f;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .best-for span {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .payment-button {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .btn-primary {
+      background: #2c5282;
+      color: white;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .btn-primary:hover {
+      background: #1e3a5f;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(44, 82, 130, 0.3);
+    }
+
+    .btn-primary:disabled, .btn-primary.coming-soon {
+      background: #9ca3af !important;
+      color: #ffffff !important;
+      cursor: not-allowed !important;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .btn-primary:disabled:hover, .btn-primary.coming-soon:hover {
+      transform: none !important;
+      box-shadow: none !important;
+      background: #9ca3af !important;
+    }
+
+    .addon-section {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+      margin-top: 3rem;
+    }
+
+    .addon-section h3 {
+      color: #1e3a5f;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #2c5282;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .addon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .addon-card {
+      padding: 1.5rem;
+      border-radius: 10px;
+      background: #f8f9fa;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .addon-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .addon-card strong {
+      color: #1e3a5f;
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .addon-price {
+      color: #2c5282;
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin: 0.8rem 0;
+    }
+
+    .addon-description {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-section {
+      background: #e3f2fd;
+      border-left: 4px solid #2196f3;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+
+    .info-section h3 {
+      color: #1565c0;
+      margin-bottom: 1rem;
+    }
+
+    .info-section ul {
+      margin-left: 1.5rem;
+    }
+
+    .info-section li {
+      margin-bottom: 0.8rem;
+      color: #424242;
+      line-height: 1.6;
+    }
+
+    .warning-box {
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+    }
+
+    .warning-box strong {
+      color: #856404;
+      display: block;
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+    }
+
+    .warning-box p {
+      color: #856404;
+      margin: 0.5rem 0;
+      line-height: 1.6;
+    }
+
+    .newsletter-signup {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+      margin-bottom: 2rem;
+    }
+
+    .newsletter-signup h3 {
+      color: #1e3a5f;
+      margin-bottom: 1rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .newsletter-form input[type="email"] {
+      flex: 1;
+      min-width: 250px;
+      padding: 0.9rem 1.2rem;
+      border-radius: 8px;
+      border: 2px solid #e5e7eb;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .newsletter-form input[type="email"]:focus {
+      outline: none;
+      border-color: #2c5282;
+    }
+
+    .newsletter-form button {
+      padding: 0.9rem 2rem;
+      background: #2c5282;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-form button:hover {
+      background: #1e3a5f;
+    }
+
+    .form-note {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .plan-price {
+        font-size: 2rem;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .newsletter-form input[type="email"] {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1 style="text-align:center; margin:0;">Deepak Market Education & Research</h1>
+  <div class="header-top">
+    <h1>Deepak Investment Advisory</h1>
+    <p>Research-Driven Investment Solutions for Long-Term Wealth Creation</p>
+  </div>
   <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
@@ -16,42 +360,199 @@
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="payment.html">Payment</a>
-    <a href="disclaimer.html">Disclaimer</a>
   </nav>
 </header>
 
+<div class="premium-hero">
+  <h2>Choose Your Investment Learning Path</h2>
+  <p>Select a plan that matches your investment journey and learning goals</p>
+</div>
+
 <div class="container">
-  <div class="section">
-    <h2>Make Payment</h2>
+  <div class="disclaimer-banner">
+    <strong>⚠️ Important Notice</strong>
+    All offerings are educational in nature and do not constitute personalized investment advice. These services are designed to help investors learn, build confidence, and apply long-term investing principles. For personalized portfolio advice, consult a SEBI-registered Investment Adviser.
+  </div>
 
-    <p>
-      Annual access fee for educational content:
-    </p>
+  <!-- Free Newsletter Card -->
+  <div class="newsletter-signup">
+    <h3>🎁 Start Free - Monthly Newsletter</h3>
+    <p style="color: #666; margin-bottom: 0.5rem;">Get educational content, sample research notes, and IPO checklists delivered to your inbox every month.</p>
+    
+    <form action="mailto:deepak.jindal07@gmail.com" method="post" enctype="text/plain">
+      <div class="newsletter-form">
+        <input type="email" name="Email" placeholder="Enter your email address" required>
+        <button type="submit">Subscribe Free</button>
+      </div>
+      <p class="form-note">No credit card required. Unsubscribe anytime.</p>
+    </form>
+  </div>
 
-    <div class="price-box">
-      <h3 style="margin:0;">₹10,000 per year</h3>
-      <p style="margin:5px 0 0;">Includes access to monthly research summaries and market learning materials.</p>
+  <!-- Pricing Grid -->
+  <div class="pricing-grid">
+
+    <!-- Starter Pack -->
+    <div class="plan-card">
+      <h3>🚀 Starter Pack</h3>
+      <p class="plan-price">₹2,999 <span>one-time</span></p>
+      <p class="plan-description">Perfect for absolute beginners who want to start their investment journey with a structured foundation.</p>
+
+      <ul class="plan-list">
+        <li>Beginner Investor Blueprint (comprehensive PDF guide)</li>
+        <li>Sample starter portfolio templates</li>
+        <li>Recorded webinar: "How to Start Investing"</li>
+        <li>WhatsApp broadcast access for market updates</li>
+        <li>Basic investment checklist and tools</li>
+      </ul>
+
+      <div class="best-for">
+        <strong>Best For:</strong>
+        <span>New investors who want a step-by-step introduction to market investing</span>
+      </div>
+
+      <div class="payment-button">
+        <button class="btn-primary coming-soon" disabled>Coming Soon</button>
+      </div>
     </div>
 
-    <h3>Pay Securely via Razorpay</h3>
+    <!-- Basic Plan -->
+    <div class="plan-card">
+      <h3>📊 Basic Plan</h3>
+      <p class="plan-price">₹8,999 <span>/ year</span></p>
+      <p class="plan-description">Regular educational stock ideas and market insights to build your investment knowledge systematically.</p>
 
-    <form>
-      <script src="https://checkout.razorpay.com/v1/payment-button.js"
-        data-payment_button_id="pl_YOUR_REAL_ID_HERE" async>
-      </script>
-    </form>
+      <ul class="plan-list">
+        <li>1-2 research-backed stock ideas per month</li>
+        <li>Detailed PDF research notes with valuation analysis</li>
+        <li>Risk assessment and investment rationale</li>
+        <li>Quarterly market learning briefs</li>
+        <li>Email support for educational clarifications</li>
+        <li>Access to past research archive</li>
+      </ul>
 
-    <p style="margin-top:20px;">
-      After payment, please send your full name and email to:
-      <br><strong>your-email@example.com</strong>
-    </p>
+      <div class="best-for">
+        <strong>Best For:</strong>
+        <span>Working professionals and busy investors seeking structured monthly learning</span>
+      </div>
+
+      <div class="payment-button">
+        <button class="btn-primary coming-soon" disabled>Coming Soon</button>
+      </div>
+    </div>
+
+    <!-- Premium Plan - Featured -->
+    <div class="plan-card featured">
+      <span class="featured-badge">MOST POPULAR</span>
+      <h3>⭐ Premium Plan</h3>
+      <p class="plan-price">₹24,999 <span>/ year</span></p>
+      <p class="plan-description">Comprehensive portfolio learning framework with in-depth analysis and direct access to insights.</p>
+
+      <ul class="plan-list">
+        <li>Everything in Basic Plan</li>
+        <li>Educational portfolio restructuring framework</li>
+        <li>Detailed portfolio analysis report (PDF)</li>
+        <li>Quarterly portfolio review and learning sessions</li>
+        <li>Monthly AMA (Ask Me Anything) email sessions</li>
+        <li>Priority email support</li>
+        <li>Exclusive webinars and market insights</li>
+        <li>Advanced valuation templates and tools</li>
+      </ul>
+
+      <div class="best-for">
+        <strong>Best For:</strong>
+        <span>Serious investors seeking deep portfolio knowledge and comprehensive learning framework</span>
+      </div>
+
+      <div class="payment-button">
+        <button class="btn-primary coming-soon" disabled>Coming Soon</button>
+      </div>
+    </div>
 
   </div>
+
+  <!-- Add-ons Section -->
+  <div class="addon-section">
+    <h3>📚 Educational Add-ons</h3>
+    <p style="color: #666; margin-top: 1rem;">Enhance your learning with these specialized educational resources</p>
+
+    <div class="addon-grid">
+      
+      <div class="addon-card">
+        <strong>📖 Reading Financial Statements</strong>
+        <p class="addon-price">₹1,499</p>
+        <p class="addon-description">Self-paced mini-course covering balance sheets, P&L statements, cash flows, and key financial ratios.</p>
+        <button class="btn-primary coming-soon" disabled>Coming Soon</button>
+      </div>
+
+      <div class="addon-card">
+        <strong>🎥 Live Webinar: Investing Basics</strong>
+        <p class="addon-price">₹499</p>
+        <p class="addon-description">Interactive live session covering fundamental investing concepts with Q&A opportunity.</p>
+        <button class="btn-primary coming-soon" disabled>Coming Soon</button>
+      </div>
+
+      <div class="addon-card">
+        <strong>📋 IPO Analysis Checklist</strong>
+        <p class="addon-price">₹399</p>
+        <p class="addon-description">Comprehensive guide to evaluating IPOs with checklist framework and real examples.</p>
+        <button class="btn-primary coming-soon" disabled>Coming Soon</button>
+      </div>
+
+      <div class="addon-card">
+        <strong>💡 Valuation Masterclass</strong>
+        <p class="addon-price">₹2,499</p>
+        <p class="addon-description">Learn DCF, comparable analysis, and practical valuation techniques with Excel templates.</p>
+        <button class="btn-primary coming-soon" disabled>Coming Soon</button>
+      </div>
+
+      <div class="addon-card">
+        <strong>📊 Sector Analysis Reports</strong>
+        <p class="addon-price">₹799</p>
+        <p class="addon-description">Deep-dive sector reports covering trends, leaders, and opportunities. Choose from 10+ sectors.</p>
+        <button class="btn-primary coming-soon" disabled>Coming Soon</button>
+      </div>
+
+      <div class="addon-card">
+        <strong>🎯 Portfolio Review Session</strong>
+        <p class="addon-price">₹4,999</p>
+        <p class="addon-description">One-on-one educational portfolio discussion (non-advisory) with detailed feedback document.</p>
+        <button class="btn-primary" id="portfolio-review-btn">Book Session</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- After Payment Information -->
+  <div class="info-section">
+    <h3>✅ Next Steps After Payment</h3>
+    <ul>
+      <li>You will receive a payment confirmation email from Razorpay immediately</li>
+      <li>Send your full name and registered email to <strong>deepak.jindal07@gmail.com</strong></li>
+      <li>For Premium Plan subscribers: Optionally attach a basic portfolio CSV for educational framework examples</li>
+      <li>Access credentials and educational materials will be sent within 24-72 hours</li>
+      <li>Check your spam folder if you don't receive our email within 3 business days</li>
+    </ul>
+  </div>
+
+  <!-- Warning Box -->
+  <div class="warning-box">
+    <strong>⚠️ Regulatory Compliance Notice</strong>
+    <p>All products and services offered are strictly educational in nature and do not constitute personalized financial advice or recommendations.</p>
+    <p>These materials are designed to help you learn about investing principles and market analysis. They should not be considered as personalized investment advice tailored to your specific financial situation.</p>
+    <p>For customized portfolio advice and personalized investment recommendations, please consult a SEBI-registered Investment Adviser.</p>
+  </div>
+
 </div>
 
 <footer>
-  © 2025 Deepak Market Education & Research. All rights reserved.
+  <p><strong>Deepak Investment Advisory</strong></p>
+  <p>© 2025 All rights reserved.</p>
+  <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">
+    Disclaimer: Investments in securities market are subject to market risks. Read all related documents carefully before investing.
+  </p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>

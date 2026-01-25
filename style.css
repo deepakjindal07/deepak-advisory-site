@@ -1,82 +1,660 @@
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* BASE */
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  background: #f5f7fa;
-  color: #222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa;
+  color: #333;
   line-height: 1.6;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
+/* ============================================
+   GLOBAL ANIMATIONS
+   ============================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Smooth fade-in for all animated elements */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation delay for cards */
+.animate-delay-1 { transition-delay: 0.1s; }
+.animate-delay-2 { transition-delay: 0.2s; }
+.animate-delay-3 { transition-delay: 0.3s; }
+.animate-delay-4 { transition-delay: 0.4s; }
+.animate-delay-5 { transition-delay: 0.5s; }
+
+/* HEADER (NOT STICKY) */
 header {
-  background: #1e293b;
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
   color: white;
-  padding: 20px;
+  padding: 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  position: relative;
+  animation: fadeIn 0.8s ease;
+  z-index: 1000;
 }
 
+/* HEADER TOP */
+.header-top {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.header-top h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  animation: fadeIn 1s ease;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.header-top p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  animation: fadeIn 1.2s ease;
+}
+
+/* NAVBAR */
 nav {
   display: flex;
-  gap: 20px;
   justify-content: center;
-  margin-top: 10px;
+  padding: 0.8rem;
+  background: rgba(0,0,0,0.12);
 }
 
 nav a {
-  color: #cbd5e1;
+  color: white;
   text-decoration: none;
-  font-size: 16px;
-  padding: 8px 14px;
+  padding: 0.6rem 1.5rem;
+  margin: 0 0.3rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
   border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.1);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+nav a:hover::before {
+  left: 0;
 }
 
 nav a:hover {
-  background: #334155;
-  color: white;
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.hero {
-  padding: 60px 20px;
+nav a.active {
+  background: rgba(255,255,255,0.2);
+  font-weight: 600;
+}
+
+/* ============================================
+   PREMIUM GLOBAL HERO (used on ALL pages)
+   Same design as About Page Hero
+   ============================================ */
+
+.premium-hero {
+  background: linear-gradient(135deg, rgba(30, 58, 95, 0.92), rgba(44, 82, 130, 0.92)),
+              url('hero-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  padding: 5rem 2rem;
   text-align: center;
-  background: #e0e7ff;
+  color: white;
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+  max-width: 1200px;
+  margin: 2rem auto 3rem auto;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease;
 }
 
-.container {
+.premium-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(30, 58, 95, 0.85), rgba(44, 82, 130, 0.85));
+  z-index: 0;
+}
+
+.premium-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.premium-hero h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.45);
+  animation: fadeIn 1.2s ease;
+}
+
+.premium-hero p {
+  font-size: 1.2rem;
   max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
+  margin: auto;
+  opacity: 0.95;
+  line-height: 1.8;
+  animation: fadeIn 1.4s ease;
 }
 
+@media (max-width: 768px) {
+  .premium-hero h2 { font-size: 2rem; }
+  .premium-hero p  { font-size: 1rem; }
+}
+
+/* MAIN CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 3rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* SECTION */
 .section {
   background: white;
-  padding: 30px;
-  margin-bottom: 30px;
+  padding: 3rem;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
 }
 
-h1, h2 {
-  color: #1e293b;
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(44, 82, 130, 0.05), transparent);
+  transition: left 0.5s ease;
 }
 
-.price-box {
-  background: #eef2ff;
-  border-left: 5px solid #4f46e5;
-  padding: 20px;
-  border-radius: 10px;
-  margin: 20px 0;
+.section:hover::before {
+  left: 100%;
 }
 
-.btn {
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.section h2 {
+  border-bottom: 3px solid #2c5282;
   display: inline-block;
-  padding: 12px 20px;
-  background: #4f46e5;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
+  font-size: 2rem;
+  margin-bottom: 1.3rem;
 }
 
-footer {
+/* FEATURE CARDS */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-left: 4px solid #2c5282;
+  border-radius: 10px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(44, 82, 130, 0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card:hover::after {
+  opacity: 1;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(44, 82, 130, 0.15);
+  border-left-width: 6px;
+}
+
+/* TESTIMONIALS */
+.testimonials-section {
+  background: white;
+  padding: 4rem 2rem;
+  margin: 3rem 0;
+  border-radius: 12px;
+}
+
+.testimonials-section h2,
+.testimonials-section .subtitle {
   text-align: center;
-  padding: 30px;
-  margin-top: 40px;
-  background: #1e293b;
-  color: #cbd5e1;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.testimonial-container {
+  max-width: 850px;
+  margin: auto;
+}
+
+.testimonial-slide {
+  display: none;
+  padding: 2rem;
+  text-align: center;
+}
+
+.testimonial-slide.active {
+  display: block;
+  animation: fadeIn 0.8s ease;
+}
+
+.testimonial-slide {
+  animation: fadeIn 0.8s ease;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #2c5282;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(44, 82, 130, 0.3);
+}
+
+.profile-pic:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 20px rgba(44, 82, 130, 0.4);
+}
+
+.testimonial-slide .feedback {
+  max-width: 750px;
+  margin: 1rem auto;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+/* DOTS */
+.testimonial-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1.8rem;
+}
+
+.dot {
+  height: 14px;
+  width: 14px;
+  background: #cfd4da;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.dot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background: #2c5282;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #2c5282;
+  transform: scale(1.3);
+}
+
+.dot.active::before {
+  width: 20px;
+  height: 20px;
+  opacity: 0.3;
+}
+
+.dot:hover {
+  background: #1e3a5f;
+  transform: scale(1.2);
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 3s infinite;
+}
+
+/* DARK MODE */
+.dark-mode {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* ============================================
+   ENHANCED BUTTON STYLES (Global)
+   ============================================ */
+.cta-button, .btn-primary, .contact-button, button[type="submit"] {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-button::before, .btn-primary::before, .contact-button::before, button[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.cta-button:hover::before, .btn-primary:hover::before, .contact-button:hover::before, button[type="submit"]:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Coming Soon / Disabled Button Styles */
+.btn-primary:disabled, .cta-button.coming-soon, button.coming-soon {
+  background: #9ca3af !important;
+  color: #ffffff !important;
+  cursor: not-allowed !important;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.btn-primary:disabled:hover, .cta-button.coming-soon:hover, button.coming-soon:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  background: #9ca3af !important;
+}
+
+/* Enhanced card hover effects */
+.card, .service-item, .principle-card, .belief-card, .impact-card, .benefit-card, .addon-card, .contact-card, .pricing-card, .plan-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before, .service-item::before, .principle-card::before, .belief-card::before, .impact-card::before, .benefit-card::before, .addon-card::before, .contact-card::before, .pricing-card::before, .plan-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.card:hover::before, .service-item:hover::before, .principle-card:hover::before, .belief-card:hover::before, .impact-card:hover::before, .benefit-card:hover::before, .addon-card:hover::before, .contact-card:hover::before, .pricing-card:hover::before, .plan-card:hover::before {
+  left: 100%;
+}
+
+/* Smooth scroll indicator */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #2c5282, #1e3a5f);
+  z-index: 9999;
+  transition: width 0.1s ease;
+}
+
+/* Loading animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(44, 82, 130, 0.3);
+  border-radius: 50%;
+  border-top-color: #2c5282;
+  animation: spin 1s linear infinite;
+}
+
+/* ============================================
+   ENHANCED FORM INPUTS
+   ============================================ */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 82, 130, 0.2);
+}
+
+/* Enhanced image animations */
+img {
+  transition: all 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+  filter: brightness(1.05);
+}
+
+/* Enhanced list items */
+ul li, ol li {
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+ul li:hover, ol li:hover {
+  transform: translateX(5px);
+  color: #2c5282;
+}
+
+/* Enhanced table rows */
+tr {
+  transition: all 0.2s ease;
+}
+
+tr:hover {
+  background-color: rgba(44, 82, 130, 0.05);
+  transform: scale(1.01);
+}
+
+/* Smooth transitions for all interactive elements */
+a, button, input, select, textarea {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced focus states */
+*:focus {
+  outline: 2px solid rgba(44, 82, 130, 0.5);
+  outline-offset: 2px;
+}
+
+/* Smooth page transitions */
+html {
+  scroll-padding-top: 2rem;
+}
+
+/* Enhanced container animations */
+.container {
+  animation: fadeIn 0.8s ease;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .section { padding: 2rem 1.3rem; }
+  
+  .premium-hero {
+    padding: 3rem 1.5rem;
+    margin: 1rem auto 2rem auto;
+    background-attachment: scroll;
+  }
+  
+  nav a {
+    padding: 0.5rem 1rem;
+    margin: 0 0.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .header-top h1 {
+    font-size: 1.5rem;
+  }
+  
+  .premium-hero h2 {
+    font-size: 1.8rem;
+  }
 }

@@ -1,14 +1,319 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Services – Deepak Market Education & Research</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - Deepak Investment Advisory</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+
+    .service-category {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 2.5rem;
+    }
+
+    .service-category h3 {
+      color: #1e3a5f;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 3px solid #2c5282;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .service-item {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 10px;
+      border-left: 4px solid #2c5282;
+      transition: all 0.3s ease;
+    }
+
+    .service-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      border-left-width: 6px;
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .service-item h4 {
+      color: #1e3a5f;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .service-item p {
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .service-features {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 1rem;
+    }
+
+    .service-features li {
+      padding: 0.5rem 0;
+      color: #666;
+      position: relative;
+      padding-left: 1.8rem;
+    }
+
+    .service-features li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #2c5282;
+      font-weight: bold;
+    }
+
+    .pricing-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      padding: 3rem;
+      border-radius: 12px;
+      margin-top: 3rem;
+      border: 2px solid #e5e7eb;
+    }
+
+    .pricing-section h3 {
+      color: #1e3a5f;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .pricing-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      border-color: #2c5282;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    .pricing-card.featured {
+      border: 2px solid #2c5282;
+      position: relative;
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2c5282;
+      color: white;
+      padding: 0.4rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .pricing-card h4 {
+      color: #1e3a5f;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c5282;
+      margin: 1rem 0;
+    }
+
+    .price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #666;
+    }
+
+    .pricing-card p {
+      color: #666;
+      margin: 1rem 0;
+      line-height: 1.6;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #2c5282;
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background: #1e3a5f;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(44, 82, 130, 0.3);
+    }
+
+    .cta-button.coming-soon {
+      background: #9ca3af !important;
+      color: #ffffff !important;
+      cursor: not-allowed !important;
+      opacity: 0.7;
+      pointer-events: none;
+      text-decoration: none;
+    }
+
+    .cta-button.coming-soon:hover {
+      transform: none !important;
+      box-shadow: none !important;
+      background: #9ca3af !important;
+    }
+
+    .benefits-section {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      margin-top: 3rem;
+    }
+
+    .benefits-section h3 {
+      color: #1e3a5f;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .benefit-card {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .benefit-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .benefit-card h4 {
+      color: #1e3a5f;
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+    }
+
+    .benefit-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .process-section {
+      background: #f8f9fa;
+      padding: 2.5rem;
+      border-radius: 12px;
+      margin-top: 3rem;
+    }
+
+    .process-section h3 {
+      color: #1e3a5f;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: #2c5282;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 0 auto 1rem;
+    }
+
+    .process-step h4 {
+      color: #1e3a5f;
+      margin-bottom: 0.5rem;
+    }
+
+    .process-step p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .service-grid,
+      .pricing-cards,
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1 style="text-align:center; margin:0;">Deepak Market Education & Research</h1>
+  <div class="header-top">
+    <h1>Deepak Investment Advisory</h1>
+    <p>Research-Driven Investment Solutions for Long-Term Wealth Creation</p>
+  </div>
   <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
@@ -16,32 +321,247 @@
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="payment.html">Payment</a>
-    <a href="disclaimer.html">Disclaimer</a>
   </nav>
 </header>
 
+<div class="premium-hero">
+  <h2>Educational Investment Services</h2>
+  <p>Comprehensive learning programs designed to help you understand markets, analyze businesses, and build wealth through informed decision-making</p>
+</div>
+
 <div class="container">
-  <div class="section">
-    <h2>Educational Services</h2>
+  
+  <!-- Core Services -->
+  <div class="service-category">
+    <h3>Core Educational Services</h3>
+    
+    <div class="service-grid">
+      
+      <div class="service-item">
+        <span class="service-icon">📊</span>
+        <h4>Monthly Research Notes</h4>
+        <p>In-depth educational analysis of select companies covering business models, competitive advantages, financial health, and long-term potential.</p>
+        <ul class="service-features">
+          <li>1-2 detailed stock research reports monthly</li>
+          <li>Valuation analysis with multiple methods</li>
+          <li>Risk assessment and mitigation strategies</li>
+          <li>Industry context and competitive landscape</li>
+        </ul>
+      </div>
 
-    <ul>
-      <li><strong>Monthly Educational Research Notes</strong> – Learn how market participants interpret data, trends, and events.</li>
-      <li><strong>Market Learning Briefs</strong> – Macro understanding of economic indicators, business cycles, and risk factors.</li>
-      <li><strong>Portfolio Learning Tools</strong> – Educational insights into allocation principles, diversification theory, and long-term investing behavior.</li>
-    </ul>
+      <div class="service-item">
+        <span class="service-icon">📈</span>
+        <h4>Market Learning Briefs</h4>
+        <p>Educational insights into macroeconomic trends, market cycles, and how various factors influence investment decisions.</p>
+        <ul class="service-features">
+          <li>Quarterly macro analysis and trends</li>
+          <li>Economic indicator explanations</li>
+          <li>Sector rotation and cycle insights</li>
+          <li>Risk management principles</li>
+        </ul>
+      </div>
 
-    <div class="price-box">
-      <h3 style="margin:0;">Annual Access: ₹10,000</h3>
-      <p style="margin:5px 0 0;">Access to all educational material and monthly learning modules for 12 months.</p>
+      <div class="service-item">
+        <span class="service-icon">💼</span>
+        <h4>Portfolio Learning Framework</h4>
+        <p>Educational guidance on portfolio construction principles, asset allocation strategies, and long-term wealth-building approaches.</p>
+        <ul class="service-features">
+          <li>Diversification principles and theory</li>
+          <li>Position sizing educational framework</li>
+          <li>Rebalancing concepts and strategies</li>
+          <li>Long-term compounding education</li>
+        </ul>
+      </div>
+
+      <div class="service-item">
+        <span class="service-icon">🎓</span>
+        <h4>Investment Education Library</h4>
+        <p>Access to comprehensive learning resources covering fundamental and advanced investing concepts.</p>
+        <ul class="service-features">
+          <li>Financial statement analysis guides</li>
+          <li>Valuation technique tutorials</li>
+          <li>Case studies of successful investments</li>
+          <li>Common investing mistakes to avoid</li>
+        </ul>
+      </div>
+
+      <div class="service-item">
+        <span class="service-icon">📧</span>
+        <h4>Email Support & Clarifications</h4>
+        <p>Educational support to help you understand concepts, reports, and investment principles more clearly.</p>
+        <ul class="service-features">
+          <li>Email responses to learning queries</li>
+          <li>Clarification on research methodology</li>
+          <li>Guidance on using educational tools</li>
+          <li>Monthly Q&A sessions for premium members</li>
+        </ul>
+      </div>
+
+      <div class="service-item">
+        <span class="service-icon">🔔</span>
+        <h4>Market Updates & Insights</h4>
+        <p>Timely educational content about significant market events, regulatory changes, and emerging opportunities.</p>
+        <ul class="service-features">
+          <li>Weekly market summary emails</li>
+          <li>IPO analysis and educational reviews</li>
+          <li>Corporate action explanations</li>
+          <li>Regulatory update summaries</li>
+        </ul>
+      </div>
+
     </div>
-
-    <a class="btn" href="payment.html">Subscribe Now</a>
   </div>
+
+  <!-- Pricing Section -->
+  <div class="pricing-section">
+    <h3>Choose Your Learning Path</h3>
+    <p style="text-align: center; color: #666; margin-bottom: 2rem;">Select the plan that best fits your investment learning journey</p>
+    
+    <div class="pricing-cards">
+      
+      <div class="pricing-card">
+        <h4>Starter Pack</h4>
+        <div class="price">₹2,999<span> / one-time</span></div>
+        <p>Perfect for beginners starting their investment education journey</p>
+        <ul class="service-features" style="text-align: left; margin: 1.5rem 0;">
+          <li>Beginner's investment guide</li>
+          <li>Sample portfolio templates</li>
+          <li>Recorded webinar access</li>
+          <li>Basic tools and checklists</li>
+        </ul>
+        <span class="cta-button coming-soon">Coming Soon</span>
+      </div>
+
+      <div class="pricing-card">
+        <h4>Basic Plan</h4>
+        <div class="price">₹8,999<span> / year</span></div>
+        <p>Structured monthly learning with regular stock ideas and insights</p>
+        <ul class="service-features" style="text-align: left; margin: 1.5rem 0;">
+          <li>Monthly research notes</li>
+          <li>Quarterly learning briefs</li>
+          <li>Email support</li>
+          <li>Research archive access</li>
+        </ul>
+        <span class="cta-button coming-soon">Coming Soon</span>
+      </div>
+
+      <div class="pricing-card featured">
+        <span class="popular-badge">MOST POPULAR</span>
+        <h4>Premium Plan</h4>
+        <div class="price">₹24,999<span> / year</span></div>
+        <p>Comprehensive learning with portfolio framework and direct access</p>
+        <ul class="service-features" style="text-align: left; margin: 1.5rem 0;">
+          <li>Everything in Basic</li>
+          <li>Portfolio learning framework</li>
+          <li>Quarterly reviews</li>
+          <li>Monthly AMA sessions</li>
+          <li>Priority support</li>
+        </ul>
+        <span class="cta-button coming-soon">Coming Soon</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Benefits Section -->
+  <div class="benefits-section">
+    <h3>Why Choose Our Educational Services?</h3>
+    
+    <div class="benefits-grid">
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">🎯</div>
+        <h4>Research-Driven Approach</h4>
+        <p>Learn from comprehensive analysis based on financial data, industry trends, and fundamental research principles</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">📚</div>
+        <h4>Structured Learning</h4>
+        <p>Progressive educational content that builds your knowledge systematically from basics to advanced concepts</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">⏰</div>
+        <h4>Time-Efficient</h4>
+        <p>Receive curated insights and analysis saving you hours of research while learning proven methodologies</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🔍</div>
+        <h4>Quality Over Quantity</h4>
+        <p>Focus on understanding fewer, high-quality businesses deeply rather than surface-level analysis of many</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">💡</div>
+        <h4>Practical Insights</h4>
+        <p>Real-world case studies and examples that demonstrate practical application of investment principles</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🤝</div>
+        <h4>Ongoing Support</h4>
+        <p>Continuous access to educational resources and support to clarify concepts and deepen understanding</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Process Section -->
+  <div class="process-section">
+    <h3>How It Works</h3>
+    
+    <div class="process-steps">
+      
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <h4>Choose Your Plan</h4>
+        <p>Select the educational service package that matches your learning goals</p>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <h4>Subscribe & Access</h4>
+        <p>Complete payment and receive immediate access to your learning portal</p>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <h4>Learn & Grow</h4>
+        <p>Receive monthly educational content, reports, and insights directly to your inbox</p>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <h4>Apply Knowledge</h4>
+        <p>Use the frameworks and tools to enhance your investment decision-making</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="section" style="text-align: center; padding: 3rem; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-radius: 12px; margin-top: 3rem;">
+    <h3 style="color: #1e3a5f; font-size: 2rem; margin-bottom: 1rem;">Ready to Start Your Investment Learning Journey?</h3>
+    <p style="color: #666; font-size: 1.1rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+      Join hundreds of investors who are building their knowledge and confidence through structured, research-driven education
+    </p>
+    <span class="cta-button coming-soon" style="font-size: 1.1rem; padding: 1.2rem 3rem; display: inline-block;">Coming Soon</span>
+    <p style="margin-top: 1.5rem; color: #999; font-size: 0.9rem;">No long-term contracts • Cancel anytime • Educational content only</p>
+  </div>
+
 </div>
 
 <footer>
-  © 2025 Deepak Market Education & Research. All rights reserved.
+  <p><strong>Deepak Investment Advisory</strong></p>
+  <p>© 2025 All rights reserved.</p>
+  <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">
+    Disclaimer: All services are educational. Investments in securities market are subject to market risks. Read all related documents carefully before investing.
+  </p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>

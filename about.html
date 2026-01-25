@@ -1,14 +1,348 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>About – Deepak Market Education & Research</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Deepak Investment Advisory</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+
+    .journey-section {
+      background: white;
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 3rem;
+    }
+
+    .journey-section h3 {
+      color: #1e3a5f;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 3px solid #2c5282;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .journey-section p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    .journey-section strong {
+      color: #1e3a5f;
+    }
+
+    .stats-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .stats-card {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: all 0.3s ease;
+      border-top: 4px solid #2c5282;
+    }
+
+    .stats-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    .stats-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .stats-card h3 {
+      font-size: 2.5rem;
+      margin: 0 0 0.5rem 0;
+      color: #2c5282;
+      font-weight: 700;
+    }
+
+    .stats-card p {
+      margin: 0;
+      color: #666;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .portfolio-showcase {
+      background: #f8f9fa;
+      padding: 3rem;
+      border-radius: 12px;
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    .portfolio-showcase h3 {
+      color: #1e3a5f;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .portfolio-image-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      position: relative;
+    }
+
+    .portfolio-showcase img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      border: 4px solid white;
+    }
+
+    .portfolio-caption {
+      font-size: 0.95rem;
+      color: #666;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    .disclaimer-badge {
+      display: inline-block;
+      background: #fff3cd;
+      color: #856404;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      border-left: 4px solid #ffc107;
+    }
+
+    .beliefs-section {
+      background: white;
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 3rem;
+    }
+
+    .beliefs-section h3 {
+      color: #1e3a5f;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid #2c5282;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .beliefs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .belief-card {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 10px;
+      border-left: 4px solid #2c5282;
+      transition: all 0.3s ease;
+    }
+
+    .belief-card:hover {
+      transform: translateX(5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      border-left-width: 6px;
+    }
+
+    .belief-card h4 {
+      color: #1e3a5f;
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    .belief-card p {
+      color: #666;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .milestone-section {
+      background: linear-gradient(135deg, #2c5282 0%, #1e3a5f 100%);
+      color: white;
+      padding: 3rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
+
+    .milestone-section h3 {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .timeline {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .timeline-item {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #ffd700;
+      transition: all 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateX(5px);
+    }
+
+    .timeline-year {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffd700;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-content {
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.7;
+    }
+
+    .purpose-section {
+      background: white;
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 3rem;
+    }
+
+    .purpose-section h3 {
+      color: #1e3a5f;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 3px solid #2c5282;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .purpose-section p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    .purpose-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .highlight-card {
+      text-align: center;
+      padding: 2rem;
+      background: #f8f9fa;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .highlight-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .highlight-card h4 {
+      color: #1e3a5f;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .highlight-card p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      padding: 3rem;
+      border-radius: 12px;
+      text-align: center;
+      border: 2px solid #e5e7eb;
+    }
+
+    .cta-section h3 {
+      color: #1e3a5f;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      color: #666;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #2c5282;
+      color: white;
+      padding: 1rem 3rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #1e3a5f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(44, 82, 130, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .stats-box,
+      .beliefs-grid,
+      .purpose-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-card h3 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1 style="text-align:center; margin:0;">Deepak Market Education & Research</h1>
+  <div class="header-top">
+    <h1>Deepak Investment Advisory</h1>
+    <p>Research-Driven Investment Solutions for Long-Term Wealth Creation</p>
+  </div>
   <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
@@ -16,26 +350,303 @@
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="payment.html">Payment</a>
-    <a href="disclaimer.html">Disclaimer</a>
   </nav>
 </header>
 
 <div class="container">
-  <div class="section">
-    <h2>About Me</h2>
+
+  <!-- HERO -->
+  <div class="premium-hero">
+    <h2>About Deepak Jindal</h2>
     <p>
-      I am a lifelong learner and student of financial markets, with over a decade of personal investing experience. My focus is on researching businesses, understanding market psychology, and sharing educational insights that simplify investing concepts.
+      A passionate student of financial markets with 13+ years of disciplined, research-driven equity investing experience.
+      My mission is to demystify long-term investing and empower investors through education, clarity, and timeless principles.
     </p>
-    <p>
-      Through this platform, I aim to share structured learning modules that help individuals build their own understanding of stock markets, risk, valuation, and investor behavior.
-    </p>
-    <p style="opacity:0.7;">(All content is purely educational in nature.)</p>
   </div>
+
+  <!-- JOURNEY SECTION -->
+  <div class="journey-section">
+    <h3>My Investment Journey</h3>
+
+    <p>
+      I started my investing journey over 13 years ago with a fundamental question that would shape my entire approach: 
+      <strong>"How do exceptional businesses create lasting wealth over extended periods?"</strong> What began as intellectual 
+      curiosity evolved into a structured, disciplined learning process grounded in value investing principles, rigorous 
+      business analysis, and understanding market psychology.
+    </p>
+
+    <p>
+      Throughout this journey, I immersed myself in the teachings of investment legends—Warren Buffett, Charlie Munger, 
+      Peter Lynch, Benjamin Graham, and Mohnish Pabrai. I studied their frameworks, read countless annual reports, analyzed 
+      business models, and most importantly, learned from both successes and mistakes. This wasn't just theoretical 
+      learning—I applied these principles consistently in building my own equity portfolio.
+    </p>
+
+    <p>
+      The results demonstrate the transformative power of disciplined, long-term investing based on sound fundamentals:
+    </p>
+
+    <!-- STATS -->
+    <div class="stats-box">
+      <div class="stats-card">
+        <div class="stats-icon">📅</div>
+        <h3>13+</h3>
+        <p>Years of Active Market Experience</p>
+      </div>
+
+      <div class="stats-card">
+        <div class="stats-icon">📈</div>
+        <h3>26%</h3>
+        <p>CAGR Portfolio Performance</p>
+      </div>
+
+      <div class="stats-card">
+        <div class="stats-icon">💰</div>
+        <h3>30x</h3>
+        <p>Wealth Multiplication Through Compounding</p>
+      </div>
+
+      <div class="stats-card">
+        <div class="stats-icon">🎯</div>
+        <h3>₹3+ Cr</h3>
+        <p>Current Portfolio Value</p>
+      </div>
+    </div>
+
+    <p>
+      This extraordinary growth was achieved not through speculation, market timing, or complex strategies—but through 
+      understanding quality businesses deeply, holding them patiently through economic cycles, and allowing the power of 
+      compounding to work its magic. Every investment was backed by thorough research, every decision guided by 
+      fundamental analysis, and every position held with conviction through volatility.
+    </p>
+  </div>
+
+  <!-- Portfolio Showcase -->
+  <div class="portfolio-showcase">
+    <h3>Real Performance, Real Results</h3>
+    <p style="color: #666; max-width: 800px; margin: 0 auto 2rem;">
+      Transparency is fundamental to building trust. Below is an actual snapshot of my personal portfolio performance, 
+      demonstrating the practical application of the principles I teach and share.
+    </p>
+    
+    <div class="portfolio-image-container">
+      <img src="PP.png" alt="Portfolio Performance Dashboard - 13 Year Track Record">
+    </div>
+    
+    <p class="portfolio-caption">
+      Personal portfolio performance snapshot demonstrating long-term compounding through disciplined investing
+    </p>
+    
+    <div class="disclaimer-badge">
+      📊 Shared for educational purposes only • Past performance does not guarantee future results
+    </div>
+  </div>
+
+  <!-- Milestone Timeline -->
+  <div class="milestone-section">
+    <h3>Key Milestones in My Journey</h3>
+    
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">2011-2012</div>
+        <div class="timeline-content">
+          Started investing journey with initial capital of ₹10 lakhs. Focused on learning fundamentals, 
+          reading annual reports, and understanding basic valuation principles.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2013-2015</div>
+        <div class="timeline-content">
+          Deepened knowledge through extensive reading—Benjamin Graham's "The Intelligent Investor," Lynch's 
+          "One Up on Wall Street," and Buffett's shareholder letters. Made first long-term quality investments.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2016-2018</div>
+        <div class="timeline-content">
+          Developed systematic research process. Identified several multi-bagger opportunities through detailed 
+          fundamental analysis. Portfolio crossed ₹50 lakhs milestone.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2019-2020</div>
+        <div class="timeline-content">
+          Navigated COVID-19 market crash with discipline. Used volatility as opportunity rather than risk. 
+          Strengthened conviction in quality businesses during market panic.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2021-2023</div>
+        <div class="timeline-content">
+          Portfolio crossed ₹1 crore mark. Witnessed the power of long-term compounding firsthand. 
+          Started sharing knowledge through educational content.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2024-Present</div>
+        <div class="timeline-content">
+          Portfolio reached ₹3+ crores. Launched this platform to help others learn systematic, research-driven 
+          investing. Committed to empowering investors through education.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Beliefs Section -->
+  <div class="beliefs-section">
+    <h3>My Core Investment Beliefs</h3>
+    
+    <div class="beliefs-grid">
+      
+      <div class="belief-card">
+        <h4>💎 Quality Compounds</h4>
+        <p>
+          Exceptional businesses with durable competitive advantages generate wealth automatically when held 
+          patiently. Time in the market beats timing the market.
+        </p>
+      </div>
+
+      <div class="belief-card">
+        <h4>💰 Valuation Matters</h4>
+        <p>
+          Even the finest business becomes a poor investment if purchased at an excessive price. Margin of 
+          safety is non-negotiable in every investment decision.
+        </p>
+      </div>
+
+      <div class="belief-card">
+        <h4>🧠 Understand What You Own</h4>
+        <p>
+          If you cannot explain the business model clearly in simple terms, you shouldn't own it. Clarity 
+          precedes conviction, and conviction enables patience.
+        </p>
+      </div>
+
+      <div class="belief-card">
+        <h4>🛡️ Risk is Not Volatility</h4>
+        <p>
+          Real risk is permanent loss of capital, not temporary price fluctuations. Volatility is often an 
+          opportunity, not something to fear or avoid.
+        </p>
+      </div>
+
+      <div class="belief-card">
+        <h4>⏰ Markets Reward Discipline</h4>
+        <p>
+          Success comes from discipline, patience, and consistency—not from intelligence, speed, or complexity. 
+          Simple strategies executed patiently outperform complex ones.
+        </p>
+      </div>
+
+      <div class="belief-card">
+        <h4>🎯 Simplicity Wins</h4>
+        <p>
+          Over-diversified, cluttered portfolios underperform focused, well-researched ones. Concentrated 
+          conviction in quality beats wide diversification in mediocrity.
+        </p>
+      </div>
+
+      <div class="belief-card">
+        <h4>📚 Continuous Learning</h4>
+        <p>
+          Markets evolve, businesses change, and new opportunities emerge. Staying intellectually curious and 
+          continuously learning is essential for long-term success.
+        </p>
+      </div>
+
+      <div class="belief-card">
+        <h4>🤝 Integrity First</h4>
+        <p>
+          Transparency, honesty, and ethical conduct are non-negotiable. I invest only in companies with 
+          management teams that demonstrate these same values.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Purpose Section -->
+  <div class="purpose-section">
+    <h3>My Purpose & Mission</h3>
+
+    <p>
+      After experiencing the life-changing impact of disciplined long-term investing, I felt a deep responsibility 
+      to share this knowledge with others. This platform represents my commitment to giving back—by providing 
+      structured educational content, clear explanations, real-world case studies, and research-driven insights 
+      gained through years of practical investing experience.
+    </p>
+
+    <p>
+      I've witnessed too many investors lose money chasing quick profits, following hot tips, or making emotional 
+      decisions during volatility. My goal is to help you avoid these costly mistakes by teaching you timeless 
+      principles, systematic research methods, and disciplined decision-making frameworks.
+    </p>
+
+    <p>
+      Everything on this platform is <strong>purely educational</strong>. I'm not here to give you stock tips or 
+      predict market movements. Instead, I want to empower you to:
+    </p>
+
+    <div class="purpose-highlights">
+      
+      <div class="highlight-card">
+        <div class="highlight-icon">🎓</div>
+        <h4>Learn Deeply</h4>
+        <p>Understand fundamental investing principles that have worked for decades</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-icon">🔍</div>
+        <h4>Think Independently</h4>
+        <p>Develop your own analytical framework rather than following the crowd</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-icon">💪</div>
+        <h4>Build Confidence</h4>
+        <p>Make informed decisions based on research, not emotion or speculation</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-icon">🚫</div>
+        <h4>Avoid Mistakes</h4>
+        <p>Learn from common pitfalls that derail most investors' journeys</p>
+      </div>
+
+    </div>
+
+    <p style="margin-top: 2rem; font-size: 1.15rem; color: #1e3a5f; font-weight: 500;">
+      My ultimate goal is simple: to help you become a better, more confident investor who can navigate markets 
+      independently and build lasting wealth through disciplined, research-driven investing.
+    </p>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="cta-section">
+    <h3>Ready to Start Your Journey?</h3>
+    <p>
+      Join me in learning the principles of disciplined long-term investing. Whether you're just starting out or 
+      looking to refine your approach, I'm here to help you every step of the way.
+    </p>
+    <a href="services.html" class="cta-button">Explore Learning Programs</a>
+  </div>
+
 </div>
 
 <footer>
-  © 2025 Deepak Market Education & Research. All rights reserved.
+  <p><strong>Deepak Investment Advisory</strong></p>
+  <p>© 2025 All rights reserved.</p>
+  <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">
+    Disclaimer: All content is educational. Past performance does not guarantee future results. Investments in securities market are subject to market risks.
+  </p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
