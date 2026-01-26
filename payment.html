@@ -289,36 +289,26 @@
       gap: 1rem;
       margin-top: 1.5rem;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .newsletter-form input[type="email"] {
-      flex: 1;
-      min-width: 250px;
-      padding: 0.9rem 1.2rem;
-      border-radius: 8px;
-      border: 2px solid #e5e7eb;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-    }
-
-    .newsletter-form input[type="email"]:focus {
-      outline: none;
-      border-color: #2c5282;
-    }
-
-    .newsletter-form button {
-      padding: 0.9rem 2rem;
+    .newsletter-subscribe-btn {
+      padding: 0.9rem 2.5rem;
       background: #2c5282;
       color: white;
       border: none;
       border-radius: 8px;
+      font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
+      width: auto;
     }
 
-    .newsletter-form button:hover {
+    .newsletter-subscribe-btn:hover {
       background: #1e3a5f;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(44, 82, 130, 0.3);
     }
 
     .form-note {
@@ -379,13 +369,10 @@
     <h3>🎁 Start Free - Monthly Newsletter</h3>
     <p style="color: #666; margin-bottom: 0.5rem;">Get educational content, sample research notes, and IPO checklists delivered to your inbox every month.</p>
     
-    <form action="mailto:deepak.jindal07@gmail.com" method="post" enctype="text/plain">
-      <div class="newsletter-form">
-        <input type="email" name="Email" placeholder="Enter your email address" required>
-        <button type="submit">Subscribe Free</button>
-      </div>
-      <p class="form-note">No credit card required. Unsubscribe anytime.</p>
-    </form>
+    <div class="newsletter-form">
+      <button type="button" class="newsletter-subscribe-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfFwIZH8MiPem-YP3-GgRK3BLQMZnyJiWdoUJFA8BNsRXhpXw/viewform?usp=header', '_blank')">Subscribe Free</button>
+    </div>
+    <p class="form-note">No credit card required. Unsubscribe anytime.</p>
   </div>
 
   <!-- Pricing Grid -->
@@ -516,7 +503,7 @@
         <strong>🎯 Portfolio Review Session</strong>
         <p class="addon-price">₹4,999</p>
         <p class="addon-description">One-on-one educational portfolio discussion (non-advisory) with detailed feedback document.</p>
-        <button class="btn-primary" id="portfolio-review-btn">Book Session</button>
+        <button class="btn-primary" id="portfolio-review-btn" onclick="window.open('https://rzp.io/rzp/Cgwl6X9A', '_blank')">Book Session</button>
       </div>
 
     </div>
