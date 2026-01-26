@@ -1,257 +1,18 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Deepak Investment Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .contact-card {
-      background: white;
-      padding: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
-      border-top: 4px solid #2c5282;
-    }
-
-    .contact-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    }
-
-    .contact-icon {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
-      display: block;
-    }
-
-    .contact-card h3 {
-      color: #1e3a5f;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .contact-card p {
-      color: #666;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-info {
-      color: #2c5282;
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      word-break: break-word;
-    }
-
-    .contact-button {
-      display: inline-block;
-      background: #2c5282;
-      color: white;
-      padding: 0.9rem 2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .contact-button:hover {
-      background: #1e3a5f;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(44, 82, 130, 0.3);
-    }
-
-    .newsletter-section {
-      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-      padding: 3rem;
-      border-radius: 12px;
-      margin-bottom: 3rem;
-      border: 2px solid #e5e7eb;
-    }
-
-    .newsletter-section h3 {
-      color: #1e3a5f;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .newsletter-section p {
-      text-align: center;
-      color: #666;
-      font-size: 1.05rem;
-      margin-bottom: 2rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .newsletter-benefits {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-
-    .benefit-item {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      padding: 1rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .benefit-icon {
-      font-size: 1.8rem;
-      flex-shrink: 0;
-    }
-
-    .benefit-text {
-      color: #555;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    .newsletter-form {
-      max-width: 600px;
-      margin: 2rem auto;
-      background: white;
-      padding: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-      display: block;
-      color: #1e3a5f;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.9rem 1rem;
-      border: 2px solid #e5e7eb;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-      font-family: inherit;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #2c5282;
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .form-submit {
-      width: 100%;
-      background: #2c5282;
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .form-submit:hover {
-      background: #1e3a5f;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(44, 82, 130, 0.3);
-    }
-
-    .form-note {
-      text-align: center;
-      color: #999;
-      font-size: 0.9rem;
-      margin-top: 1rem;
-      line-height: 1.6;
-    }
-
-    .faq-section {
-      background: white;
-      padding: 3rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      margin-bottom: 3rem;
-    }
-
-    .faq-section h3 {
-      color: #1e3a5f;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      border-bottom: 3px solid #2c5282;
-      padding-bottom: 0.5rem;
-      display: inline-block;
-    }
-
-    .faq-item {
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .faq-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .faq-question {
-      color: #1e3a5f;
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.8rem;
-    }
-
-    .faq-answer {
-      color: #666;
-      line-height: 1.8;
-    }
-
-    .social-section {
-      background: #f8f9fa;
-      padding: 2.5rem;
-      border-radius: 12px;
-      text-align: center;
-    }
-
-    .social-section h3 {
-      color: #1e3a5f;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-    }
-
+    /* Specific styles for FAQ and Social Links only needed here */
     .social-links {
       display: flex;
       justify-content: center;
@@ -264,274 +25,220 @@
       align-items: center;
       gap: 0.5rem;
       padding: 0.8rem 1.5rem;
-      background: white;
+      background: var(--secondary-navy);
       border-radius: 8px;
       text-decoration: none;
-      color: #1e3a5f;
-      font-weight: 600;
+      color: var(--text-light);
+      font-weight: 500;
       transition: all 0.3s ease;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .social-link:hover {
       transform: translateY(-3px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      color: #2c5282;
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
     }
 
-    .social-icon {
-      font-size: 1.5rem;
+    .faq-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    @media (max-width: 768px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
 
-      .newsletter-benefits {
-        grid-template-columns: 1fr;
-      }
+    .faq-question {
+      color: var(--accent-gold);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
 
-      .newsletter-form {
-        padding: 1.5rem;
-      }
+    .faq-answer {
+      color: var(--text-dim);
+      font-size: 0.95rem;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <div class="header-top">
-    <h1>Deepak Investment Advisory</h1>
-    <p>Research-Driven Investment Solutions for Long-Term Wealth Creation</p>
-  </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="philosophy.html">Philosophy</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="payment.html">Payment</a>
-  </nav>
-</header>
-
-<div class="premium-hero">
-  <h2>Get in Touch</h2>
-  <p>Have questions about our educational services? Want to learn more about disciplined investing? We're here to help you on your investment journey.</p>
-</div>
-
-<div class="container">
-
-  <!-- Contact Cards -->
-  <div class="contact-grid">
-    
-    <div class="contact-card">
-      <span class="contact-icon">📧</span>
-      <h3>Email Us</h3>
-      <p>For inquiries about our services, educational content, or subscription questions</p>
-      <div class="contact-info">deepak.jindal07@gmail.com</div>
-      <a href="mailto:deepak.jindal07@gmail.com" class="contact-button">Send Email</a>
+  <header>
+    <div class="header-inner">
+      <div class="logo">DEEPAK <span>ADVISORY</span></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="philosophy.html">Philosophy</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="payment.html">Payment</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="contact-card">
-      <span class="contact-icon">📱</span>
-      <h3>Call Us</h3>
-      <p>Prefer to talk? Reach out via phone for quick questions or service inquiries</p>
-      <div class="contact-info">+91-98765-43210</div>
-      <a href="tel:+919876543210" class="contact-button">Call Now</a>
+  <div class="hero" style="min-height: 50vh;">
+    <div class="hero-content">
+      <h1>Get in Touch</h1>
+      <p>Have questions about our educational services? We're here to help you on your investment journey.</p>
     </div>
-
-    <div class="contact-card">
-      <span class="contact-icon">💬</span>
-      <h3>WhatsApp</h3>
-      <p>Connect with us on WhatsApp for instant communication and quick updates</p>
-      <div class="contact-info">+91-98765-43210</div>
-      <a href="https://wa.me/919876543210" class="contact-button" target="_blank">Chat on WhatsApp</a>
-    </div>
-
   </div>
 
-  <!-- Newsletter Section -->
-  <div class="newsletter-section">
-    <h3>🎁 Start Free - Monthly Newsletter</h3>
-    <p>
-      Join hundreds of investors receiving monthly educational content, market insights, and investment wisdom 
-      directly in their inbox. No credit card required. Unsubscribe anytime.
-    </p>
+  <div class="container slide-up">
 
-    <div class="newsletter-benefits">
-      <div class="benefit-item">
-        <span class="benefit-icon">📚</span>
-        <span class="benefit-text">Educational market insights</span>
-      </div>
-      <div class="benefit-item">
-        <span class="benefit-icon">📊</span>
-        <span class="benefit-text">Sample research notes quarterly</span>
-      </div>
-      <div class="benefit-item">
-        <span class="benefit-icon">✅</span>
-        <span class="benefit-text">IPO analysis checklists</span>
-      </div>
-      <div class="benefit-item">
-        <span class="benefit-icon">💡</span>
-        <span class="benefit-text">Investment tips & frameworks</span>
+    <!-- CONTACT CARDS -->
+    <div class="section">
+      <div class="grid-3">
+        <div class="glass-card text-center">
+          <div class="text-gold" style="font-size: 2.5rem; margin-bottom: 1rem;">📧</div>
+          <h3>Email Us</h3>
+          <p style="color: var(--text-dim); margin-bottom: 1rem;">For inquiries about services or content.</p>
+          <p style="font-weight: bold; color: var(--text-light);">deepak.jindal07@gmail.com</p>
+          <a href="mailto:deepak.jindal07@gmail.com" class="btn btn-primary" style="margin-top: 1rem;">Send Email</a>
+        </div>
+
+        <div class="glass-card text-center">
+          <div class="text-gold" style="font-size: 2.5rem; margin-bottom: 1rem;">📱</div>
+          <h3>Call Us</h3>
+          <p style="color: var(--text-dim); margin-bottom: 1rem;">Reach out for quick questions.</p>
+          <p style="font-weight: bold; color: var(--text-light);">+91-98765-43210</p>
+          <a href="tel:+919876543210" class="btn btn-primary" style="margin-top: 1rem;">Call Now</a>
+        </div>
+
+        <div class="glass-card text-center">
+          <div class="text-gold" style="font-size: 2.5rem; margin-bottom: 1rem;">💬</div>
+          <h3>WhatsApp</h3>
+          <p style="color: var(--text-dim); margin-bottom: 1rem;">Connect for instant updates.</p>
+          <p style="font-weight: bold; color: var(--text-light);">+91-98765-43210</p>
+          <a href="https://wa.me/919876543210" class="btn btn-primary" style="margin-top: 1rem;">Chat Now</a>
+        </div>
       </div>
     </div>
 
-    <div class="newsletter-form">
-      <button type="button" class="form-submit" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfFwIZH8MiPem-YP3-GgRK3BLQMZnyJiWdoUJFA8BNsRXhpXw/viewform?usp=header', '_blank')">Subscribe to Free Newsletter</button>
-      <p class="form-note" style="margin-top: 1rem; text-align: center;">
-        Click the button above to open the subscription form. No credit card required. Unsubscribe anytime.
+    <!-- NEWSLETTER -->
+    <div class="section">
+      <div class="glass-card text-center" style="border: 1px solid var(--accent-gold);">
+        <h3 class="mb-1">🎁 Weekly Wisdom Newsletter</h3>
+        <p class="mb-2" style="max-width: 600px; margin: 0 auto 2rem; color: var(--text-dim);">
+          Join hundreds of investors receiving educational content, market insights, and investment wisdom directly. No
+          spam, ever.
+        </p>
+
+        <button class="btn btn-filled"
+          onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfFwIZH8MiPem-YP3-GgRK3BLQMZnyJiWdoUJFA8BNsRXhpXw/viewform?usp=header', '_blank')">
+          Subscribe for Free
+        </button>
+
+        <div
+          style="margin-top: 2rem; display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; color: var(--text-dim); font-size: 0.9rem;">
+          <span>✓ Market Insights</span>
+          <span>✓ Investment Frameworks</span>
+          <span>✓ IPO Analysis</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div class="section">
+      <div class="section-title">
+        <h2>Send a Message</h2>
+      </div>
+
+      <div class="glass-card" style="max-width: 700px; margin: 0 auto;">
+        <form
+          action="https://docs.google.com/forms/d/e/1FAIpQLScYSiwmMkPC2oEn7_Z4Edjjms_zXz-fr4uyIuGwWV_QhV_3Tg/formResponse"
+          method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+          <div class="form-group">
+            <label for="fullname">Full Name *</label>
+            <input type="text" id="fullname" name="entry.123456" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="entry.987654" placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="entry.654321" placeholder="+91-XXXXX-XXXXX">
+          </div>
+
+          <div class="form-group">
+            <label for="interest">What interests you most?</label>
+            <textarea id="interest" name="entry.456789" rows="4"
+              placeholder="e.g., long-term investing, portfolio building..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-filled" style="width: 100%;">Submit Message</button>
+        </form>
+
+        <iframe name="hidden_iframe" style="display:none"
+          onload="if(submitted){alert('✅ Thanks for contacting us! We will get back to you soon.');}"></iframe>
+
+        <p style="text-align: center; font-size: 0.8rem; color: var(--text-dim); margin-top: 1rem;">
+          We typically respond within 24-48 hours.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="section">
+      <div class="section-title">
+        <h2>Common Questions</h2>
+      </div>
+
+      <div class="glass-card">
+        <div class="faq-item">
+          <div class="faq-question">❓ What's the best way to reach you?</div>
+          <div class="faq-answer">Email is the most reliable way. We respond within business hours.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">❓ Do you provide personalized advice?</div>
+          <div class="faq-answer">No, all services are educational. For personalized advice, consult a SEBI RIA.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">❓ How do I access premium content?</div>
+          <div class="faq-answer">After subscription, access details are emailed within 24 hours.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">❓ Can I get a refund?</div>
+          <div class="faq-answer">We have a 7-day satisfaction policy for annual plans.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="section text-center">
+      <h3>Follow Us</h3>
+      <div class="social-links" style="margin-top: 1.5rem;">
+        <a href="#" class="social-link"><span>📘</span> Facebook</a>
+        <a href="#" class="social-link"><span>🐦</span> Twitter</a>
+        <a href="#" class="social-link"><span>💼</span> LinkedIn</a>
+        <a href="#" class="social-link"><span>▶️</span> YouTube</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="logo mb-1">DEEPAK <span>ADVISORY</span></div>
+      <p>© 2025 Deepak Investment Advisory. All rights reserved.</p>
+      <p style="margin-top: 1rem; opacity: 0.6; font-size: 0.8rem;">
+        Disclaimer: Investments in securities market are subject to market risks. Read all related documents carefully
+        before investing.
+        The information provided is for educational purposes only.
       </p>
     </div>
-  </div>
+  </footer>
 
-  <!-- Contact Form Section -->
-  <div class="newsletter-section">
-    <h3>📝 Contact Us</h3>
-    <p>
-      Have a question or want to learn more? Fill out the form below and we'll get back to you as soon as possible.
-    </p>
-
-    <div class="newsletter-form">
-      <form
-        action="https://docs.google.com/forms/d/e/1FAIpQLScYSiwmMkPC2oEn7_Z4Edjjms_zXz-fr4uyIuGwWV_QhV_3Tg/formResponse"
-        method="POST"
-        target="hidden_iframe"
-        onsubmit="submitted=true;"
-      >
-        <div class="form-group">
-          <label for="fullname">Full Name *</label>
-          <input type="text" id="fullname" name="entry.123456" placeholder="Enter your full name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="entry.987654" placeholder="you@example.com" required>
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="entry.654321" placeholder="+91-XXXXX-XXXXX">
-        </div>
-
-        <div class="form-group">
-          <label for="interest">What interests you most?</label>
-          <textarea id="interest" name="entry.456789" placeholder="e.g., long-term investing, portfolio building, fundamental analysis..."></textarea>
-        </div>
-
-        <button type="submit" class="form-submit">Submit</button>
-      </form>
-
-      <iframe name="hidden_iframe" style="display:none" onload="if(submitted){alert('✅ Thanks for contacting us! We will get back to you soon.');}"></iframe>
-
-      <p class="form-note">
-        All fields marked with * are required. We typically respond within 24-48 hours.
-      </p>
-    </div>
-  </div>
-
-  <!-- FAQ Section -->
-  <div class="faq-section">
-    <h3>Frequently Asked Questions</h3>
-
-    <div class="faq-item">
-      <div class="faq-question">❓ What's the best way to reach you?</div>
-      <div class="faq-answer">
-        Email is the most reliable way to reach us at deepak.jindal07@gmail.com. We typically respond within 
-        24-48 hours during business days. For urgent matters, you can call or WhatsApp us.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">❓ Do you provide personalized investment advice?</div>
-      <div class="faq-answer">
-        No, all our services are purely educational in nature. We provide learning frameworks, research 
-        methodologies, and general investment principles. For personalized portfolio advice, please consult 
-        a SEBI-registered Investment Adviser.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">❓ How quickly will I receive access after subscribing?</div>
-      <div class="faq-answer">
-        After successful payment, you'll receive a confirmation email immediately. Access credentials and 
-        educational materials are typically sent within 24-72 hours. If you don't hear from us within 3 
-        business days, please check your spam folder and contact us.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">❓ Can I get a refund if I'm not satisfied?</div>
-      <div class="faq-answer">
-        We offer a 7-day satisfaction guarantee for all annual plans. If you're not satisfied with the 
-        educational content within the first week, contact us for a full refund. One-time purchases are 
-        generally non-refundable but we'll work with you on a case-by-case basis.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">❓ Is the free newsletter really free forever?</div>
-      <div class="faq-answer">
-        Yes! Our monthly newsletter is completely free with no hidden charges. We believe in providing value 
-        upfront and helping investors learn. You can unsubscribe at any time with one click.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">❓ What makes your educational approach different?</div>
-      <div class="faq-answer">
-        We focus on timeless investment principles backed by 13+ years of practical experience. Unlike 
-        tip-based services, we teach you HOW to analyze businesses, understand markets, and make informed 
-        decisions independently. Our goal is to make you a better investor, not dependent on tips.
-      </div>
-    </div>
-  </div>
-
-  <!-- Social Media Section -->
-  <div class="social-section">
-    <h3>Connect With Us</h3>
-    <p style="color: #666; margin-bottom: 2rem;">Follow for daily insights, market updates, and investment wisdom</p>
-    
-    <div class="social-links">
-      <a href="#" class="social-link">
-        <span class="social-icon">📘</span>
-        <span>Facebook</span>
-      </a>
-      <a href="#" class="social-link">
-        <span class="social-icon">🐦</span>
-        <span>Twitter</span>
-      </a>
-      <a href="#" class="social-link">
-        <span class="social-icon">💼</span>
-        <span>LinkedIn</span>
-      </a>
-      <a href="#" class="social-link">
-        <span class="social-icon">📸</span>
-        <span>Instagram</span>
-      </a>
-      <a href="#" class="social-link">
-        <span class="social-icon">▶️</span>
-        <span>YouTube</span>
-      </a>
-    </div>
-  </div>
-
-</div>
-
-<footer>
-  <p><strong>Deepak Investment Advisory</strong></p>
-  <p>© 2025 All rights reserved.</p>
-  <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">
-    Disclaimer: All services are educational. Investments in securities market are subject to market risks. Read all related documents carefully before investing.
-  </p>
-</footer>
-
-<script src="script.js"></script>
-
-<script>
-  let submitted = false;
-</script>
+  <script>
+    let submitted = false;
+  </script>
 
 </body>
+
 </html>
